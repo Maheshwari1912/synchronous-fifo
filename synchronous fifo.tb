@@ -1,0 +1,29 @@
+module fifo_tb();
+reg clk,rst,wr,rd;
+reg [7:0] in;
+wire [7:0] out;
+wire full,empty;
+sync_fifo dut (clk,rst,wr,rd,in,out,full,empty);
+always begin
+#5 clk=~clk;
+end
+initial begin
+clk=0;rst=0;wr=0;rd=0;in=0;
+rst=1;#10; rst=0;
+wr=1;in=8'hA1;#10;
+in=8'hB2; #10;
+in=8'hC3; #10;
+in=8'hD4; #10;
+in=8'hE5; #10;
+wr=0;
+#20;
+$display("reading data");
+rd=1;#10;
+repeat(5) begin
+$display("data read:%h",out);#10;
+end
+rd=0;
+#10;
+$finish;
+end
+endmodule
