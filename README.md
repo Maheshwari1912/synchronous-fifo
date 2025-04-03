@@ -83,4 +83,6 @@ Used in hardware designs for buffering in ASICs and FPGAs.
 
 ![image](https://github.com/user-attachments/assets/2bd80f5b-a1bd-480e-bc9a-d80c80170670)
 
+**simulation results:**
 
+![image](https://github.com/user-attachments/assets/2f5e1f63-0133-468f-bc95-aea2e89078b6)
